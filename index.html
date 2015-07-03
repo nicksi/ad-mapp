@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>АВТОДОР:Прототип</title>
         <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" href="css/jqm-icon-pack-fa.css">
         <link rel="shortcut icon" href="images/favicon.ico">
         <script src="../js/jquery-2.1.4.min.js"></script>
         <script src="../js/jquery.mobile-1.4.5.min.js"></script>
@@ -52,9 +53,13 @@
 
 	<div role="main" class="ui-content">
 		<h2>Платные участки дорог</h2>
-        <ul data-role="listview" data-filter="true" data-filter-placeholder="Наберите чаcть названия..." data-inset="true">
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="Наберите чаcть названия..." data-inset="true" data-divider-theme="a">
+            <li data-role="list-divider">Ближайший</li>
+            <li><a href="#">Участок 15-58 из Москвы</a></li>
+            <li data-role="list-divider">М4</li>
             <li><a href="#">Участок 15-58 из Москвы</a></li>
             <li><a href="#">Участок 15-58 в Москву</a></li>
+            <li data-role="list-divider">М11</li>
             <li><a href="#">Объезд Воронежа</a></li>
             <li><a href="#">Участок 15-58 из Москвы</a></li>
             <li><a href="#">Участок 15-58 из Москвы</a></li>
@@ -65,7 +70,7 @@
 
 </div><!-- /page two -->
 
-<!-- Start of second page: #two -->
+<!-- Start of second page: #three -->
 <div data-role="page" id="map" data-theme="a">
 
 	<div role="main" class="ui-content">
@@ -78,16 +83,22 @@
 
 </div><!-- /page two -->
 
-<!-- Start of second page: #two -->
+<!-- Start of second page: #four -->
 <div data-role="page" id="other" data-theme="a">
 
-	<div role="main" class="ui-content">
-		<h2>Two</h2>
-		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>
-		<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>
-		<p><a href="#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Back to page "one"</a></p>
-
-	</div><!-- /content -->
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="Наберите чаcть названия..." data-divider-theme="a" data-count-theme="a">
+            <li data-icon="home"><a href="#home">Главная</a></li>
+            <li data-icon="home"><a href="#plazas">Тарифы</a></li>
+            <li data-icon="home"><a href="#">Поблизости</a></li>
+            <li data-icon="home"><a href="#map">Карта</a></li>
+            <li data-icon="home"><a href="#">Личный кабинет</a></li>
+            <li data-icon="home"><a href="#">Сообщения</a></li>
+            <li data-icon="home"><a href="#">Специальные предложения</a></li>
+            <li data-icon="home"><a href="#">Опросы<span class="ui-li-count">2</span></a></li>
+            <li data-icon="home"><a href="#">Обратная связь</a></li>
+            <li data-icon="home"><a href="#">Информация</a></li>
+            <li data-icon="home"><a href="#">Настройки</a></li>
+        </ul>
 
 </div><!-- /page two -->
 
