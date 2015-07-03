@@ -18,7 +18,7 @@
     <button class="ui-btn ui-btn-right">SOS</button>
 </div>
 
-<div data-role="footer" data-theme="a">
+<div data-role="footer" data-theme="a" data-position="fixed">
     <div data-role="navbar">
         <ul>
             <li><a href="#home" data-icon="home" class="ui-btn-active">Главная</a></li>
@@ -163,7 +163,6 @@
 
         if (found) {
             $( "[data-role='header'] a[data-rel='back']" ).hide();
-            alert("oop");
         } else {
             $( "[data-role='header'] a[data-rel='back']" ).show();
         }
