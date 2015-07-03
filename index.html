@@ -13,7 +13,7 @@
 <body>
 
 <!-- common layout elements -->    
-<div data-role="header" data-theme="a">
+<div data-role="header" data-theme="a" data-add-back-btn="true">
     <h1>АВТОДОР</h1>
     <button class="ui-btn ui-btn-right">SOS</button>
 </div>
@@ -21,7 +21,7 @@
 <div data-role="footer" data-theme="a">
     <div data-role="navbar">
         <ul>
-            <li><a href="#home" data-icon="home">Главная</a></li>
+            <li><a href="#home" data-icon="home" class="ui-btn-active">Главная</a></li>
             <li><a href="#plazas" data-icon="bullets">Тарифы</a></li>
             <li><a href="#map" data-icon="navigation">Карта</a></li>
             <li><a href="#other" data-icon="ellipsis-h">Прочее</a></li>
@@ -30,7 +30,7 @@
 </div>    
     
 <!-- Start of first page: #one -->
-<div data-role="page" id="home">
+<div data-role="page" id="home" data-title="Главная">
 
 	<div role="main" class="ui-content">
 		<h2>One</h2>
@@ -49,29 +49,28 @@
 </div><!-- /page one -->
 
 <!-- Start of second page: #two -->
-<div data-role="page" id="plazas" data-theme="a">
+<div data-role="page" id="plazas" data-theme="a" data-title="Тарифы">
 
 	<div role="main" class="ui-content">
-		<h2>Платные участки дорог</h2>
         <ul data-role="listview" data-filter="true" data-filter-placeholder="Наберите чаcть названия..." data-inset="true" data-divider-theme="a">
             <li data-role="list-divider">Ближайший</li>
-            <li><a href="#">Участок 15-58 из Москвы</a></li>
+            <li><a href="#poi">Участок 15-58 из Москвы</a></li>
             <li data-role="list-divider">М4</li>
-            <li><a href="#">Участок 15-58 из Москвы</a></li>
-            <li><a href="#">Участок 15-58 в Москву</a></li>
+            <li><a href="#poi">Участок 15-58 из Москвы</a></li>
+            <li><a href="#poi">Участок 15-58 в Москву</a></li>
             <li data-role="list-divider">М11</li>
-            <li><a href="#">Объезд Воронежа</a></li>
-            <li><a href="#">Участок 15-58 из Москвы</a></li>
-            <li><a href="#">Участок 15-58 из Москвы</a></li>
-            <li><a href="#">Участок 15-58 из Москвы</a></li>
-            <li><a href="#">Участок 15-58 из Москвы</a></li>
+            <li><a href="#poi">Объезд Воронежа</a></li>
+            <li><a href="#poi">Участок 15-58 из Москвы</a></li>
+            <li><a href="#poi">Участок 15-58 из Москвы</a></li>
+            <li><a href="#poi">Участок 15-58 из Москвы</a></li>
+            <li><a href="#poi">Участок 15-58 из Москвы</a></li>
         </ul>
 	</div><!-- /content -->
 
 </div><!-- /page two -->
 
-<!-- Start of second page: #three -->
-<div data-role="page" id="map" data-theme="a">
+<!-- Start of third page: #three -->
+<div data-role="page" id="map" data-theme="a" data-title="Карта">
 
 	<div role="main" class="ui-content">
 		<h2>Two</h2>
@@ -83,8 +82,8 @@
 
 </div><!-- /page two -->
 
-<!-- Start of second page: #four -->
-<div data-role="page" id="other" data-theme="a">
+<!-- Start of forth page: #four -->
+<div data-role="page" id="other" data-theme="a" data-title="Прочее">
 
         <ul data-role="listview" data-filter="true" data-filter-placeholder="Наберите чаcть названия..." data-divider-theme="a" data-count-theme="a">
             <li data-icon="home" data-icon-pos="left"><a href="#home">Главная</a></li>
@@ -101,6 +100,25 @@
         </ul>
 
 </div><!-- /page two -->
+
+<!-- Start of POI page: #poi -->
+<div data-role="page" id="poi" data-title="ПВП 'Объезд Воронежа'">
+
+	<div role="main" class="ui-content">
+		<p>Текст, описывающий конкретный объект.</p>
+		<ul>
+            <li>Значение первого атрибута</li>
+            <li>Значение второго атрибута</li>
+            <li>Значение и так далее...</li>
+        </ul>
+
+		<h3>Show internal pages:</h3>
+		<p><a href="#two" class="ui-btn ui-shadow ui-corner-all">Show page "two"</a></p>
+		<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
+	</div><!-- /content -->
+
+</div><!-- /page one -->
+
 
 <!-- Start of third page: #popup -->
 <div data-role="page" id="popup">
@@ -123,6 +141,36 @@
        $("[data-role=footer]").toolbar().enhanceWithin(); /* initialize footer */
        $("[data-role=popup]").popup().enhanceWithin(); /* initialize popup */
     });    
+
+    // Update the contents of the toolbars
+    $( document ).on( "pagecontainerchange", function() {
+        // Each of the four pages in this demo has a data-title attribute
+        // which value is equal to the text of the nav button
+        // For example, on first page: <div data-role="page" data-title="Info">
+        var current = $( ".ui-page-active" ).jqmData( "title" );
+        // Change the heading
+        $( "[data-role='header'] h1" ).text( current );
+        // Remove active class from nav buttons
+        $( "[data-role='navbar'] a.ui-btn-active" ).removeClass( "ui-btn-active" );
+        // Add active class to current nav button
+        var found = false;
+        $( "[data-role='navbar'] a" ).each(function() {
+            if ( $( this ).text() === current ) {
+                $( this ).addClass( "ui-btn-active" );
+                found = true;
+            }
+        });
+
+        if (found) {
+            $( "[data-role='header'] a[data-rel='back']" ).hide();
+            alert("oop");
+        } else {
+            $( "[data-role='header'] a[data-rel='back']" ).show();
+        }
+
+    });
+
+
 </script>    
 </body>
 </html>
