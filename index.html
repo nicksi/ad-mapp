@@ -31,10 +31,8 @@
     
 <!-- Start of first page: #one -->
 <div data-role="page" id="home" data-title="Главная">
-
 	<div role="main" class="ui-content">
-		<h2>One</h2>
-
+        <h2>&nbsp;</h2>
 		<p>I have an <code>id</code> of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p>
 
 		<p>This is a multi-page boilerplate template that you can copy to build your first jQuery Mobile page. This template contains multiple "page" containers inside, unlike a single page template that has just one page within it.</p>
@@ -45,12 +43,11 @@
 		<p><a href="#two" class="ui-btn ui-shadow ui-corner-all">Show page "two"</a></p>
 		<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
 	</div><!-- /content -->
-
 </div><!-- /page one -->
 
 <!-- Start of second page: #two -->
 <div data-role="page" id="plazas" data-theme="a" data-title="Тарифы">
-
+    <p>&nbsp;</p>    
 	<div role="main" class="ui-content">
         <ul data-role="listview" data-filter="true" data-filter-placeholder="Наберите чаcть названия..." data-inset="true" data-divider-theme="a">
             <li data-role="list-divider">Ближайший</li>
@@ -84,7 +81,8 @@
 
 <!-- Start of forth page: #four -->
 <div data-role="page" id="other" data-theme="a" data-title="Прочее">
-
+	<div role="main" class="ui-content">    
+        <h2>&nbsp;</h2>
         <ul data-role="listview" data-divider-theme="a" data-count-theme="a">
             <li data-icon="home" data-icon-pos="left"><a href="#home">Главная</a></li>
             <li data-icon="home"><a href="#plazas">Тарифы</a></li>
@@ -98,13 +96,14 @@
             <li data-icon="home"><a href="#">Информация</a></li>
             <li data-icon="home"><a href="#">Настройки</a></li>
         </ul>
-
+    </div>
 </div><!-- /page two -->
 
 <!-- Start of POI page: #poi -->
 <div data-role="page" id="poi" data-title="ПВП 'Объезд Воронежа'">
-
 	<div role="main" class="ui-content">
+        <h2>&nbsp;</h2>
+        <a href="#fullimage"><img  src="pic_paid_payment.jpg"></a>
 		<p>Текст, описывающий конкретный объект. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. Curabitur fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisque convallis pharetra tempor. Donec id pretium leo. Pellentesque luctus massa non elit viverra pellentesque. Cras vitae neque molestie, rhoncus ipsum sit amet, lobortis dui. Fusce in urna sem. Vivamus vehicula dignissim augue et scelerisque. Etiam quam nisi, molestie ac dolor in, tincidunt tincidunt arcu. Praesent sed justo finibus, fringilla velit quis, porta erat. Donec blandit metus ut arcu iaculis iaculis. Cras nec dolor fringilla justo ullamcorper auctor. Aliquam eget pretium velit. Morbi urna justo, pulvinar id lobortis in, aliquet placerat orci.
 Etiam nisi turpis, eleifend nec tellus id, efficitur pellentesque dolor. Proin vitae massa a augue sagittis vulputate. Duis vel fringilla magna, sit amet vestibulum enim. Fusce laoreet accumsan nisl eu sagittis. Morbi hendrerit sapien eget efficitur imperdiet. Aenean vitae nisl id est placerat congue a et nisi. Suspendisse vitae quam ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse eu risus lacus. Ut tristique libero eget est dictum, commodo malesuada orci elementum. Proin molestie eu mi in tempus.</p>
 		<ul>
@@ -120,10 +119,16 @@ Etiam nisi turpis, eleifend nec tellus id, efficitur pellentesque dolor. Proin v
           <a href="#" class="ui-btn">На карте</a>
         </div>
 	</div><!-- /content -->
-
 </div><!-- /page one -->
 
-
+<!--Full image page: #fullimage -->
+<div data-role="page" id="fullimage" data-title="ПВП 'Объезд Воронежа'">
+	<div role="main" class="ui-content">
+        <img  src="pic_paid_payment.jpg">
+        <p>Описание привязанное к картинке если есть.</p>
+	</div><!-- /content -->
+</div><!-- /page one -->
+    
 <!-- Start of third page: #popup -->
 <div data-role="page" id="popup">
 
